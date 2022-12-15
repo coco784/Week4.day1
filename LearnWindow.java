@@ -20,10 +20,16 @@ public class LearnWindow {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.findElement(By.xpath("//span[@class='ui-button-text ui-c']")).click();
 		Set<String> windowHandles = driver.getWindowHandles();
+		System.out.println("How many windows are open"+windowHandles.size());
         List<String>lstwindow=new ArrayList<String>(windowHandles);
         driver.switchTo().window(lstwindow.get(1));
+        System.out.println("how many windows are open"+lstwindow.size());
         System.out.println(driver.getWindowHandle());
         System.out.println(driver.getTitle());
+        driver.switchTo().window(lstwindow.get(0));
+        System.out.println(driver.getWindowHandle());
+        System.out.println(driver.getTitle());
+        
         
         
 	}
